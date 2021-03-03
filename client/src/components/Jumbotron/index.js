@@ -2,11 +2,9 @@ import React from "react";
 
 function Jumbotron({ children }) {
   return (
-    <div
-      style={{ height: 560, clear: "both", paddingTop: 120, textAlign: "center" }}
-      className="jumbotron border border-success"
-    >
-      {children}
+    <div className="jumbotron text-center">
+      <h1>Book Search</h1>
+      
     </div>
   );
 }

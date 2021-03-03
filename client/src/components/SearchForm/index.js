@@ -1,48 +1,56 @@
+
 import React from "react";
+import BookContext from "../../utils/bookContext";
 
-
-
-function SearchForm(props) {
+function SearchForm() {
   return (
-    <form>
-      <div className="form-group">
-        <label htmlFor="search">Book Search:</label>
-        <input
-           onChange={props.handleInputChange}
-          value={props.search.title}
-          name="title"
-          type="text"
-          className="form-control"
-          placeholder="add title"
-          id="title"
-        />
-        {/* <input
-           onChange={props.handleInputChange}
-          value={props.search.author}
-          name="author"
-          type="text"
-          className="form-control"
-          placeholder="add author"
-          id="author"
-        />
-        <input
-           onChange={props.handleInputChange}
-          value={props.search.description}
-          name="description"
-          type="text"
-          className="form-control"
-          placeholder="add description"
-          id="description"
-        /> */}
-        <br />
-        <button 
-         onClick={props.handleFormSubmit} className="btn btn-primary"
-        >
-          Search
-        </button>
-      </div>
-    </form>
+    // Use consumer to capture state.search and form handler functions
+    <BookContext.Consumer>
+      {({search, handleInputChange, handleFormSubmit}) => (
+        <form>
+          <div className="form-group">
+            <label htmlFor="search">Search:</label>
+            <input
+              onChange={handleInputChange}
+              value={search}
+              name="search"
+              type="text"
+              className="form-control"
+              placeholder="Search For a Book"
+              id="search"
+            />
+            <br />
+            <button onClick={handleFormSubmit} className="btn btn-primary">
+              Search
+            </button>
+          </div>
+        </form>
+      )}
+    </BookContext.Consumer>
   );
 }
 
 export default SearchForm;
+
+
+
+//import React from "react";
+
+// function BookSearch({ handleInputChange, q, handleFormSubmit }) {
+//     return (
+//         <div className="container">
+//             <div>
+//                 <h3>Book Search</h3>
+//             </div>
+//             <form>
+//                 <div className="form-group">
+//                     <label htmlFor="searchInput">Books</label>
+//                     <input type="text" className="form-control" id="searchInput" value={q} name='q' onChange={handleInputChange}/>
+//                 </div>
+//                 <button type="submit" className='btn btn-success' onClick={handleFormSubmit}>Search</button>
+//             </form>
+//         </div>
+//     )
+// }
+
+// export default BookSearch;

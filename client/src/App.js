@@ -4,6 +4,7 @@ import Saved from "./pages/Saved";
 import Nav from "./components/Nav";
 import { StoreProvider } from "./utils/GlobalState";
 import Search from "./pages/Search";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

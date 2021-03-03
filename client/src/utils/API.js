@@ -1,11 +1,9 @@
 import axios from "axios";
 
-export default {
-  // books
 
-  searchGoogleBooks: function(query) {
-    return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + query)
-},
+export default {
+
+
   getBooks: function() {
     return axios.get("/api/books");
   },
@@ -22,3 +20,15 @@ export default {
     return axios.post("/api/books", bookData);
   }
 };
+
+
+
+
+
+
+//   search: function(query) {
+//     return axios.get(BASEURL + query + APIKEY);
+//   },
+
+// const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
+// const APIKEY = "&apikey=AIzaSyBevsjvWWUvcvHL1KtFYtXrkOCrkgRXz3s";

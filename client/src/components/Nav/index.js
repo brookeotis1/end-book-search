@@ -1,17 +1,29 @@
 import React from "react";
-import { useStoreContext } from "../../utils/GlobalState";
+import Nav from 'react-bootstrap/Nav'
 
-function Nav() {
-  const [store] = useStoreContext();
 
+function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="/">
-        Book Search
-      </a>
-      {store.loading ? <a className="navbar-brand ml-auto"></a> : <></>}
-    </nav>
+    <Nav
+  activeKey="/home"
+  onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+>
+  <Nav.Item>
+    <a href="/search">Home</a>
+  </Nav.Item>
+  
+  <Nav.Item>
+    <a href="/search">Search</a>
+  </Nav.Item>
+  
+  <Nav.Item>
+    <a href="/saved">Saved</a>
+  </Nav.Item>
+  <Nav.Item>
+    
+  </Nav.Item>
+</Nav>
   );
 }
 
-export default Nav;
+export default Navbar;
